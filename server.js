@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 app.set('view engine', 'ejs');                          // Template Engine to be used
 app.set('views', __dirname + '/views');                 // Where the layout files are stored.
@@ -27,9 +28,10 @@ const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log('Connected to Mongoose'));
 
-
+// Main Routes
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
 // Use available port in production || port 3000 in local setup
 app.listen(process.env.PORT || 3000);
