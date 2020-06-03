@@ -1,0 +1,18 @@
+:root {
+    --border-color: hsl(var(--color-base-hue), 100%, 20%);
+}
+
+.author-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: .25rem;
+    padding: .5rem;
+}
+  
+.author-name {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
